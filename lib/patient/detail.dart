@@ -174,7 +174,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           borderRadius: BorderRadius.circular(15),
                           boxShadow: const [
                             BoxShadow(
-                              color:Color.fromRGBO(6, 187, 192, 100),
+                              color:Color.fromRGBO(6, 187, 191, 100),
                               // color: Color.fromRGBO(137, 201, 203, 100),
                               blurRadius: .2,
                               spreadRadius: .2,
