@@ -24,6 +24,7 @@ class _signUPState extends State<signUP> {
   TextEditingController _phoneTextController = TextEditingController();
   TextEditingController _idNumberTextController = TextEditingController();
   TextEditingController _fieldTextController = TextEditingController();
+  TextEditingController _dBTextController = TextEditingController();
 
 
   @override
@@ -90,7 +91,7 @@ class _signUPState extends State<signUP> {
                 Visibility(
                   visible: widget.type == 1,
                   child: reusableTextField("تاريخ الميلاد",
-                      Icons.person_outline, false, _emailTextController),
+                      Icons.person_outline, false, _dBTextController),
                 ),
                 const SizedBox(
                   height: 20,
@@ -109,7 +110,7 @@ class _signUPState extends State<signUP> {
                       .then((value) {
                     print("Created New Account");
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => siginsuccess(type: 2,)));
+                        MaterialPageRoute(builder: (context) => siginsuccess( type: widget.type,)));
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });

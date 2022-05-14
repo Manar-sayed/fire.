@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+import '../botton_screens/botton.dart';
+import '../patient/navbar.dart';
 import 'home_screen.dart';
 
 
@@ -82,15 +84,15 @@ class _siginsuccessState extends State<siginsuccess> {
                       color: const Color.fromRGBO(6, 187, 192, 1),
                       onPressed: () {
                         if (widget.type == 1) {
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => BottomNavBar()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => BottomNavBar()));
                         } else {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => home()));
+                                  builder: (context) => HomeScreen()));
                         }
                       },
                       shape: RoundedRectangleBorder(
