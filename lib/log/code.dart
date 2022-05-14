@@ -186,7 +186,10 @@ class _codeState extends State<code> {
                               if (formkey.currentState != null &&
                                   formkey.currentState!.validate()) {
 // _signUp();
-                              }
+                              };
+
+
+
                               // if(widget.type ==1){
                               //   Navigator.push(
                               //       context,
