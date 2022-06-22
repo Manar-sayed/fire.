@@ -24,7 +24,7 @@ TextField reusableTextField(String text, IconData icon, bool isPasswordType,
     obscureText: isPasswordType,
     enableSuggestions: !isPasswordType,
     autocorrect: !isPasswordType,
-    cursorColor: Colors.white,
+    cursorColor:  Color.fromRGBO(6, 187, 192, 100),
     style: TextStyle(color: Colors.white.withOpacity(0.9)),
     decoration: InputDecoration(
       prefixIcon: Icon(
@@ -32,10 +32,10 @@ TextField reusableTextField(String text, IconData icon, bool isPasswordType,
         color: Colors.white70,
       ),
       labelText: text,
-      labelStyle: TextStyle(color: Colors.white.withOpacity(0.9)),
+      labelStyle: TextStyle(color: Colors.white),
       filled: true,
       floatingLabelBehavior: FloatingLabelBehavior.never,
-      fillColor: Colors.white.withOpacity(0.3),
+      fillColor:Color.fromRGBO(6, 187, 192, 100),
       border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30.0),
           borderSide: const BorderSide(width: 0, style: BorderStyle.none)),
@@ -54,14 +54,15 @@ Container firebaseUIButton(BuildContext context, String title, Function onTap) {
 
 margin: EdgeInsets.all(10),
     decoration: BoxDecoration(
-        // boxShadow: [
-        //   BoxShadow(
-        //     color: Colors.white.withOpacity(0.5),
-        //     spreadRadius: 5,
-        //     blurRadius: 7,
-        //     offset: Offset(0, 3), // changes position of shadow
-        //   ),
-        // ],
+        border: Border.all(color: Color.fromRGBO(6, 187, 192, 10),),
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(6, 187, 192, 100),
+            spreadRadius: .21,
+            blurRadius: 5,
+            offset: Offset(0, .5), // changes position of shadow
+          ),
+        ],
         borderRadius: BorderRadius.circular(90)),
     child: ElevatedButton(
       onPressed: () {

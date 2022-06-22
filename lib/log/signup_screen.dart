@@ -30,10 +30,12 @@ class _signUPState extends State<signUP> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      // extendBodyBehindAppBar: true,
+      backgroundColor: const Color.fromRGBO(6, 187, 192, 10),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+
         title: const Text(
           "Sign Up",
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
@@ -42,21 +44,23 @@ class _signUPState extends State<signUP> {
       body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-            hexStringToColor("#98EBEE"),
-
-            hexStringToColor("#06BBC0"),
-            hexStringToColor("#1BA3D6")
-          ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+          decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20), topLeft: Radius.circular(20))),
+          // decoration: BoxDecoration(
+          //     gradient: LinearGradient(colors: [
+          //   hexStringToColor("#98EBEE"),
+          //
+          //   hexStringToColor("#06BBC0"),
+          //   hexStringToColor("#1BA3D6")
+          // ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
           child: SingleChildScrollView(
               child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 120, 20, 0),
+            padding: EdgeInsets.fromLTRB(20, 80, 20, 0),
             child: Column(
               children: <Widget>[
-                const SizedBox(
-                  height: 20,
-                ),
+
                 reusableTextField(
                     "الاسم رباعى",
                     Icons.drive_file_rename_outline,
