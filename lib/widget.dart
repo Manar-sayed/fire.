@@ -17,32 +17,47 @@ Image logoWidget(String imageName) {
   );
 }
 
-TextField reusableTextField(String text, IconData icon, bool isPasswordType,
+Container reusableTextField(String text, IconData icon, bool isPasswordType,
     TextEditingController controller) {
-  return TextField(
-    controller: controller,
-    obscureText: isPasswordType,
-    enableSuggestions: !isPasswordType,
-    autocorrect: !isPasswordType,
-    cursorColor:  Color.fromRGBO(6, 187, 192, 100),
-    style: TextStyle(color: Colors.white.withOpacity(0.9)),
-    decoration: InputDecoration(
-      prefixIcon: Icon(
-        icon,
-        color: Colors.white70,
-      ),
-      labelText: text,
-      labelStyle: TextStyle(color: Colors.white),
-      filled: true,
-      floatingLabelBehavior: FloatingLabelBehavior.never,
-      fillColor:Color.fromRGBO(6, 187, 192, 100),
-      border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30.0),
-          borderSide: const BorderSide(width: 0, style: BorderStyle.none)),
+  return Container(
+
+    decoration: BoxDecoration(    border: Border.all( width: 2.5,
+      color:Color.fromRGBO(6, 187, 192, 100),
     ),
-    keyboardType: isPasswordType
-        ? TextInputType.visiblePassword
-        : TextInputType.emailAddress,
+      color: Colors.white,
+      borderRadius: BorderRadius.only( topLeft:  const  Radius.circular(40.0),
+      topRight: const  Radius.circular(40.0),
+      bottomRight: const  Radius.circular(40.0),),
+    ),
+    child: TextField(
+      controller: controller,
+      obscureText: isPasswordType,
+      enableSuggestions: !isPasswordType,
+      autocorrect: !isPasswordType,
+      // cursorColor:  Color.fromRGBO(6, 187, 192, 100),
+      style: TextStyle(color: Colors.white.withOpacity(0.9)),
+      decoration: InputDecoration(
+        prefixIcon: Icon(
+          icon,
+          color: Color.fromRGBO(6, 187, 192, 100),
+        ),
+        labelText: text,
+        labelStyle: TextStyle(color: Color.fromRGBO(6, 187, 192, 100)),
+        filled: true,
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+         fillColor: Colors.white,
+        border: OutlineInputBorder(
+
+            borderRadius: BorderRadius.only( topLeft:  const  Radius.circular(40.0),
+              topRight: const  Radius.circular(40.0),
+              bottomRight: const  Radius.circular(40.0),
+            ),
+            borderSide: const BorderSide(width: 0, style: BorderStyle.none)),
+      ),
+      keyboardType: isPasswordType
+          ? TextInputType.visiblePassword
+          : TextInputType.emailAddress,
+    ),
   );
 }
 
@@ -54,12 +69,13 @@ Container firebaseUIButton(BuildContext context, String title, Function onTap) {
 
 margin: EdgeInsets.all(10),
     decoration: BoxDecoration(
-        border: Border.all(color: Color.fromRGBO(6, 187, 192, 10),),
+      // color: Color.fromRGBO(6, 187, 192, 10),
+        // border: Border.all(color: Color.fromRGBO(6, 187, 192, 10),),
         boxShadow: [
           BoxShadow(
-            color: Color.fromRGBO(6, 187, 192, 100),
+            color: Color.fromRGBO(60, 107, 102, 200),
             spreadRadius: .21,
-            blurRadius: 5,
+            blurRadius: 3,
             offset: Offset(0, .5), // changes position of shadow
           ),
         ],
@@ -68,19 +84,17 @@ margin: EdgeInsets.all(10),
       onPressed: () {
         onTap();
       },
-      child: Center(
-        child: Text(
-          title,
-          style: const TextStyle(
-              color: Color.fromRGBO(6, 187, 192, 10), fontWeight: FontWeight.bold, fontSize: 22),
-        ),
+      child: Text(
+        title,
+        style: const TextStyle(
+            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 22),
       ),
       style: ButtonStyle(
           backgroundColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.pressed)) {
               return Colors.black26;
             }
-            return Colors.white;
+            return Color.fromRGBO(6, 187, 192, 10);
           }),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)))),
